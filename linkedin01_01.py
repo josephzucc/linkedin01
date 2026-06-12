@@ -1,3 +1,13 @@
+# 12/06/2026	Describir que hace este programa, que parámetros obtiene de que tipo
+#		y que tipo de información da y de que tipo
+#		
+#		He analizado el programa y parece que obtiene la lista de publicaciones
+#		de un contacto específico, la url del contacto y de su actividad se
+#		pasa directamente, no la busca via pasos web con selenium, por
+#		ejemplo la web que tiene de ejemplo es
+#		"https://www.linkedin.com/in/fernandodepablomartin/recent-activity/all/"
+#		No lo he ejecutado ni comprobado si funciona
+
 # Módulos de Selenium
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
@@ -33,7 +43,10 @@ usuario = "jose.zuccoli@yahoo.es"
 #clave = os.getenv('c_infojobs')
 clave = "Pituti#2021"
 empleos = ['programador']
-driver = uc.Chrome(headless=False,use_subprocess=False)
+
+# 2026-06-12 cambio use_subprocess=False, por =True, da errores el False
+driver = uc.Chrome(headless=False,use_subprocess=True)
+
 # abre la web
 driver.get(URL) # ingresa en la direccion de la URL
 # intenta encontrar las cookies y aceptar, si no encuentra impime ya tiene las cookies
